@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Baya Karisa - Statistician Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Joseph Baya Karisa</h1>
+            <p>Statistician | Data Analyst | Researcher</p>
+        </div>
+        <div>
+            <div class="portfolio-container">
+            </div class="photo">
+            <img src="my photo .png" >
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#documents">Documents</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am Joseph Baya, a consulting data analyst and social researcher passionate about working with organisations that want to make effective use of their data; from the first ideas around what you want to measure and how to capture data accurately, through data preparation, analysis and management, all the way to impactful presentation of insights. I can support each step of the process to enable your organisation in making evidence-driven decisions or share insights with new audiences. I am available for short-term projects and part-time longer-term engagements.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3> FACTORS AFFECTING EGG PRODUCTION DEEP LITTER SYSTEM OF POULTRY FARMING IN LIMURU, KIAMBU COUNTY.</h3>
+                    <p><strong> Overview</strong> Focus is to investigate the factors affecting egg production in deep litter system of poultry farming in limuru, kiambu county.</p>
+                    <p><strong> Objectives</strong> To determine the factors that influence egg production.
+                        Specific objectives;
+                        To determine how mortality influences egg production.
+                        To determine how the amount of feeds influences egg production.</p>
+                    <p><strong> Methodology</strong> Utilized Multiple Linear Regression Model analysis techniques including ANOVA. Performed data cleaning and feature engineering in R, and created interactive visualizations using Excel</p>
+                    <p><strong> Key Findings</strong> The level of significance used was 5%. Mortality had a significant effect on feeds since the p-value was less than 5%. Amount of feeds consumed had no effect on egg production since the p-value was relatively large.</p>
+                    <p><strong> Challenges</strong> Consistency of the data. Some data was incomplete and some outdated which could potentially interfere with the data analysis and data accuracy. The data that was available had just a few predictor variables therefore analyzing it was quite challenging. Some of the data analysis results may be incorrect as a result of the minimum number of predictor variables.</p>
+                    <p><strong> Tools and Technologies</strong>  R, Multiple Linear Regression, ANOVA, Excel</p>
+                    <a href="FACTORS AFFECTING EGG PRODUCTION.docx" download>Download Project Report</a>
+                </div>
+                <div class="project">
+                    <h3>Factors Affecting Access to Credit in Kenya (Mombasa)</h3>
+                    <p><strong>Overview:</strong> The focus is to determine the factors that determine individual access to credit in Kenya (Mombasa County).</p>
+                    <p><strong>Objectives:</strong> To establish factors that enhances and those that limit individual access to credit in Mombasa County.
+                        To draw policy implications and make regarding recommendations access to credit in Mombasa County. </p>
+                    <p><strong>Methodology:</strong> The determinants of credit availability were examined in this study using logit regression models. This method was selected due to the result variable's discrete dichotomous nature, which is a household's access to credit status. Performed data cleaning and feature engineering in R studio, and created interactive visualizations using Excel to present the data.</p>
+                    <p><strong>Key Findings/Results:</strong> The logistic regression model employed, as evidenced by the deviance statistics, provided a reasonable fit for the data, thereby establishing a foundation for comprehending the relationship between the selected determinants and the ability to access credit.Based on the data, we find that Approximately 38.98% of households sought and accessed credit while 61.02% of the total sampled population were found to be credit constrained. However, 86.44% of household sought credit.</p>
+                    <p><strong>Challenges and Solutions:</strong> The use of secondary data may have restricted the variables' range, making it more difficult to capture the impacts of determinants of access to credit. Furthermore, the outcomes might have been impacted by biases that existed during the data collection procedure.</p>
+                    <p><strong>Tools and Technologies:</strong> R, logistic Rehression, Excel</p>
+                    <a href="Factors Affecting Access to Credit.docx" download>Download Data Analysis Document</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+        <section id="documents">
+            <h2>Resume</h2>
+            <ul>
+                <li><a href="RESUME.docx" download>Download My Resume</a></li>
+                <li><a href="Factors Affecting Access to Credit.docx" download>Download Project Report</a></li>
+                <li><a href="credit analysis.Rmd" download>Download Data Analysis Document</a></li>
+                <!-- Add more documents as needed -->
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you would like to get in touch, feel free to reach out through any of the following methods:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:josephbaya9648@gmail.com">josephbaya9648@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+254741026232">+254 741 026 232</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joseph-baya-7bb1ab2a3/" target="_blank">https://www.linkedin.com/in/joseph-baya-7bb1ab2a3/</a></li>
+                <!-- Add more contact methods as needed -->
+            </ul>
+            <!-- Optional: Add a contact form -->
+            <h3>Contact Form</h3>
+            <form action="send-message.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Joseph Baya Karisa. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+---
+date: "`r Sys.Date()`"
+author: "Your Name"
+title: "officedown template"
+output: 
+  officedown::rdocx_document:
+    mapstyles:
+      Normal: ['First Paragraph']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.cap = TRUE)
+library(officedown)
+library(officer)
+
+fp <- fp_par(
+  text.align = "center", 
+  padding.bottom = 20, padding.top = 120, 
+  border.bottom = fp_border())
+
+ft <- fp_text(shading.color='#EFEFEF', bold = TRUE)
+```
+
+
+```{r}
+library(readr)
+library(readxl)
+
+my_data <- read_excel("C:/Users/JOSEPH BAYA/Desktop/Daaa.xlsx")
+
+View(my_data)
+```
+
+```{r}
+
+# Convert categorical variables to factors
+my_data$`SOUGHT CREDIT` <- factor(my_data$`SOUGHT CREDIT`, levels = c('Yes', 'No'))
+my_data$`SOUGHT CREDIT AND ACCESSED CREDIT` <- factor(my_data$`SOUGHT CREDIT AND ACCESSED CREDIT`, levels = c('Yes', 'No'))
+my_data$Education <- factor(my_data$Education, levels = c( 'High School Certificate','Bachelors Degree','Masters Degree','Doctorate'))
+sd(my_data$`NUMBER OF CHILDREN`)
+summary(my_data)
+
+```
+
+```{r}
+library(dplyr)
+# Fit logistic regression model
+model1 <- glm(my_data$`SOUGHT CREDIT AND ACCESSED CREDIT` ~ `SOUGHT CREDIT` + `HOUSEHOLD INCOME` + Age + Education, data = my_data, family = "binomial")
+
+# Alternatively, using dplyr for data manipulation
+# model <- my_data %>%
+#             glm(outcome ~ predictor1 + predictor2, family = "binomial")
+summary(model1)
+
+```
+
+```{r}
+hist(my_data$Age,
+     main = 'HISTOGRAM OF HOUSEHOLD AGE',
+     xlab = 'Age',
+     ylab = 'Frequency', border = 'black',)
+
+hist(my_data$`NUMBER OF CHILDREN`,
+     main = 'HISTOGRAM OF N0 OF CHILDREN PER HOUSEHOLD',
+     xlab = 'Number of children',
+     ylab = 'Frequency', border = 'black',)
+
+hist(my_data$`HOUSEHOLD INCOME`,
+     main = 'HISTOGRAM OF INCOME PER HOUSEHOLD',
+     xlab = 'INCOME PER HOUSEHOLD',
+     ylab = 'Frequency', border = 'black',)
+
+```
+
+
+```{r}
+# Shapiro-Wilk normality test 
+shapiro.test(my_data$`NUMBER OF CHILDREN`)
+shapiro.test(my_data$Age)
+shapiro.test(my_data$`HOUSEHOLD INCOME`)
+```
+
+```{r}
+qqnorm(my_data$Age)
+qqnorm(my_data$`HOUSEHOLD INCOME`)
+qqline(my_data$Age)
+qqline(my_data$`HOUSEHOLD INCOME`)
+```
+
+```{r}
+library(car)
+
+#checking for multicollinearity
+vif_values <- vif(model1)
+print(vif_values)
+
+```
+
